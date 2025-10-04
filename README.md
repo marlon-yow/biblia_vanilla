@@ -76,3 +76,57 @@ Foi necessário utilizar comandos de terminal Linux (`sed`) para garantir que a 
   * **`exibirCapitulo()`:** Foi ajustada para iterar sobre as **chaves** (strings de números) dos objetos de versículo e de capítulo, o que simplificou a lógica de exibição em relação ao uso de *arrays*.
   * **Regex Atualizada:** A função de busca (`buscarReferencia`) foi atualizada para aceitar abreviaturas mais longas (`[0-9A-Z]{2,3}`), garantindo a compatibilidade com livros como **`1CO`** ou **`2TM`**.
 
+### 4\. Livros (`data`)
+
+  * Peguei de uns repositórios do github:
+  * https://github.com/wesleycsj/BibliaJSON
+  * https://github.com/hasneto/BibliaJSON
+
+
+### 5\. Livros com falha
+
+  *  NVI Salmos
+  *  ARA Salmos
+  *  NVI Proverbios
+  *  ARA Proverbios
+  *  ACF cantares
+  *  NVI cantares
+  *  ARA cantares
+  *  ARA Isaias
+  *  NVI Jeremias
+  *  NVI Lamentacoes
+  *  ARA Lamentacoes
+  *  NVI Ezequiel
+  *  ARA Ezequiel
+  *  ARA Joel
+  *  NVI joao
+  *  NVI Romanos
+  *  NVI 2 Corintios
+  *  NVI Tiago
+  *  NVI 1 Pedro
+
+  ```javascritp
+  a = [capitulos em array de arrays]
+  b = {};
+maxb = 0;
+startIn = 1;
+for(let ia = 0; ia < a.length; ia ++){
+	b[startIn+ia] = a[ia];
+	maxb = startIn+ia;
+}
+
+c = {};
+for(let ib = startIn; ib <= maxb; ib++){
+	c[ib] = {};
+	for (let ia = 0; ia < b[ib].length; ia++) {
+		c[ib][ia+1] = b[ib][ia];
+	}
+}
+```
+
+### 6\. Versões a inserir (já tenho em JSON)
+
+  * NVT
+  * NAA
+  * KJA
+
