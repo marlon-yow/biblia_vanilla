@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bíblia Pura JS</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    
+    <header id="cabecalho">
+        <h1>Bíblia Pura JS</h1>
+        
+        <div id="controles-topo">
+            <button id="toggle-tema" title="Alternar Tema Claro/Escuro">💡</button>
+            <div id="busca-rapida">
+                <input type="text" id="input-referencia" 
+                       placeholder="Ex: GN 1:1" 
+                       title="Use o formato: Livro Abreviado C:V" 
+                       autocapitalize="off">
+            </div>
+        </div>
+    </header>
+
+    <nav id="nav-versoes" class="bullet-list">
+        <button data-versao="ACF" class="versao-btn active">ACF</button>
+        <button data-versao="NVI" class="versao-btn">NVI</button>
+        <button data-versao="ARA" class="versao-btn">ARA</button>
+    </nav>
+
+    <main>
+        <div id="nav-livros" class="lista-2-colunas">
+            <p>Carregando lista de livros...</p>
+        </div>
+
+        <div id="nav-capitulos" class="bullet-list hidden">
+            <button id="btn-voltar-livros">← Livros</button>
+            <h3 id="livro-selecionado-titulo"></h3>
+            <div id="bullets-container">
+                </div>
+        </div>
+        
+        <h2 id="titulo-pagina-leitura">Selecione um Livro</h2>
+        
+        <div id="conteudo-biblia">
+            <p>Selecione um livro para começar.</p>
+        </div>
+    </main>
+
+    <nav id="nav-avanco-capitulos" class="bullet-list hidden">
+        <button id="btn-capitulo-anterior" disabled>← Anterior</button>
+        <button id="btn-capitulo-proximo">Próximo →</button>
+    </nav>
+    
+    <script src="script.js"></script>
+</body>
+</html>

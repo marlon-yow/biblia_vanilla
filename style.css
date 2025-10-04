@@ -1,0 +1,117 @@
+/* Definições de cores base (Tema CLARO) */
+:root {
+    /* Cores de Fundo/Texto */
+    --cor-fundo-principal: #ffffff;
+    --cor-texto-principal: #222222;
+    --cor-fundo-cabecalho: #007bff;
+    --cor-texto-cabecalho: #ffffff;
+    /* Cores de Destaque */
+    --cor-destaque: #007bff;
+    --cor-borda-padrao: #dddddd;
+    /* Cores de AT/NT */
+    --cor-cinza-at: #666666; 
+    --cor-cinza-nt: #888888; 
+}
+
+/* Redefinição de cores (Tema ESCURO) */
+body.dark-theme {
+    --cor-fundo-principal: #121212;
+    --cor-texto-principal: #e0e0e0;
+    --cor-fundo-cabecalho: #1f1f1f;
+    --cor-texto-cabecalho: #eeeeee;
+    --cor-destaque: #4a90e2;
+    --cor-borda-padrao: #333333;
+    --cor-cinza-at: #999999;
+    --cor-cinza-nt: #777777; 
+}
+
+/* Aplicação de Variáveis e Transições */
+body {
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0; padding: 0;
+}
+main { padding: 10px; }
+.hidden { display: none !important; }
+
+/* LAYOUT: CABEÇALHO e BUSCA */
+#cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-fundo-cabecalho);
+    color: var(--cor-texto-cabecalho);
+    padding: 10px;
+}
+#controles-topo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#input-referencia {
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    border: 1px solid var(--cor-borda-padrao);
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+}
+#toggle-tema {
+    background: none; border: none; font-size: 1.2em; cursor: pointer;
+}
+
+/* LAYOUT: BULLETS (Versões, Capítulos e Avanço) */
+.bullet-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--cor-borda-padrao);
+    flex-wrap: wrap; /* Para mobile */
+}
+.bullet-list button {
+    background: none; border: 1px solid transparent; 
+    cursor: pointer; padding: 5px 8px; margin: 2px;
+    color: var(--cor-texto-principal);
+}
+/* Destaque da Versão Ativa */
+.bullet-list .versao-btn.active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--cor-destaque);
+}
+/* Destaque do Capítulo Ativo (NOVO) */
+.bullet-list button.active-capitulo {
+    font-weight: bold;
+    background-color: var(--cor-destaque); 
+    color: var(--cor-texto-cabecalho) !important;
+    border-radius: 4px;
+}
+
+/* LAYOUT: LISTA DE LIVROS (Duas Colunas) */
+.lista-2-colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.lista-2-colunas button {
+    display: block; width: 100%; padding: 10px; text-align: left;
+    border: 1px solid var(--cor-borda-padrao);
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    cursor: pointer;
+}
+.livro-at { color: var(--cor-cinza-at); }
+.livro-nt { color: var(--cor-cinza-nt); }
+
+/* ESTILO DE LEITURA */
+.numero-versiculo {
+    font-weight: bold;
+    margin-right: 5px;
+    color: var(--cor-destaque);
+}
+#conteudo-biblia p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
